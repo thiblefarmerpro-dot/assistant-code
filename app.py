@@ -23,7 +23,8 @@ else:
                 }
                 
                 data = {
-                    "model": "qwen/qwen-2.5-coder-32b-instruct:free",
+                    "model": "deepseek/deepseek-chat:free",
+
                     "messages": [
                         {"role": "user", "content": user_prompt}
                     ]
