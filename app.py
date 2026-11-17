@@ -12,7 +12,6 @@ api_key = st.secrets.get("OPENROUTER_API_KEY")
 if not api_key:
     st.error("⚠️ La clé API OpenRouter n'est pas configurée dans les secrets.")
 else:
-    # Zone de texte pour la question
     user_prompt = st.text_area("Votre question :", placeholder="Ex: Écris une fonction Python pour trier une liste...")
 
     if st.button("Générer le code"):
@@ -46,4 +45,3 @@ else:
                     st.error(f"Erreur de l'API : {response.status_code} - {response.text}")
         else:
             st.warning("Veuillez entrer une question.")
-.
