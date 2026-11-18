@@ -23,7 +23,7 @@ else:
                 }
                 
                 data = {
-                    "model": "deepseek/deepseek-chat:free",
+                    "model"meta-llama/llama-3.1-8b-instruct:free",
 
                     "messages": [
                         {"role": "user", "content": user_prompt}
