@@ -1,18 +1,17 @@
 import streamlit as st
 import requests
 
-st.set_page_config(page_title="Mon Assistant Code Qwen", page_icon="💻")
+st.set_page_config(page_title="Mon Assistant Code", page_icon="💻")
 
-st.title("🚀 Mon Assistant Code (Qwen2.5-Coder)")
+st.title("🚀 Mon Assistant Code")
 st.write("Posez vos questions de programmation ci-dessous :")
 
-# Récupération de la clé API depuis les secrets sécurisés de Streamlit
 api_key = st.secrets.get("OPENROUTER_API_KEY")
 
 if not api_key:
     st.error("⚠️ La clé API OpenRouter n'est pas configurée dans les secrets.")
 else:
-    user_prompt = st.text_area("Votre question :", placeholder="Ex: Écris une fonction Python pour trier une liste...")
+    user_prompt = st.text_area("Votre question :", placeholder="Ex: Écris une fonction Python...")
 
     if st.button("Générer le code"):
         if user_prompt:
@@ -23,8 +22,7 @@ else:
                 }
                 
                 data = {
-                    "model"meta-llama/llama-3.1-8b-instruct:free",
-
+                    "model": "openrouter/free",
                     "messages": [
                         {"role": "user", "content": user_prompt}
                     ]
